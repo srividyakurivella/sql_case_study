@@ -92,13 +92,15 @@ insert into reservations values(84,4,2,'2022-08-18','2022-10-18');
 insert into reservations values(85,5,3,'2023-01-15','2023-02-15');
 
 select * from reservations;
-
+-- toget the details of all books which are available
 select * from books where availability='Y';
-
+-- to get the information about all the borrowed books
 SELECT Books.Title, Books.Author, Borrowers.Name, Loans.date_borrowed, Loans.due_date
 FROM Books
 INNER JOIN Loans ON Books.BookID = Loans.BookID
 INNER JOIN Borrowers ON Loans.BorrowerID = Borrowers.BorrowerID;
+
+-- to get the information about all the reserved books
 
 SELECT Books.Title, Books.Author, Reservations.DateReserved,Reservations.DateNeeded
 FROM Books
